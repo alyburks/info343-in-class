@@ -8,25 +8,72 @@ body {
     font-size: 18px;
 }
 
-/* TODO: tell the browser to include borders and padding in size calculations */
+/* TODO: tell the browser to include borders and padding in size calculations 
+by saying border box when I saw 30% it will include border and padding*/
+* {
+    box-sizing: border-box;
+}
 
 /* TODO: constrain the width of <div class="container"> elements to a max of 1140px
 and keep the content horizontally-centered with 1rem of padding on left/right */
+.container {
+    max-inline-size: 1140px;
+    margin: 0 auto;
+    padding: o 1rem; /*ask what rem means*/
+    
+}
 
 /* TODO: set background image of the <header> to `header.jpg` in the `img` directory,
 and set text color to white, and ensure the height is at least 200px */
+header {
+    background-image: url(../img/header.jpg);
+    background-size: cover;
+    color: #fff;
+    min-height: 200px
+}
 
 /* TODO: set the font size of the <h1> in the <header> to 5rem
 and the font weight to 200 */
+header h1{
+    margin: 0;
+    font-size: 5rem;
+    font-weight: 200;
+    flex: 1;
+}
 
 /* TODO: set the height of the SVG icon to 3rem */
+header svg{
+    height: 3rem;
+    fill: currentColor; /*fill with whatever the color is around it"*/
+}
 
 /* TODO: make the color of the hyperlink icon white instead of blue
 and when it has focus/hover change the color to #FF9800, 
 from Material Design Color Palette: 
 https://material.io/guidelines/style/color.html#color-color-palette */
+header a{
+    color: #FFF;
+    transition: all 500ms;
+}
+
+header a:hover, header a:focus{ 
+    color: #ff9800;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+}
 
 /* TODO: make the <div class="col"> elements layout side-by-side instead of stacked */
+.row {
+    display: flex;
+    justify-content: flex-end; /*flex start = left flex end = right*/
+    /*flex-direction: row-reverse;*/
+}
+
+
+
 
 .col {
     background-color: #FF9800; 
@@ -34,8 +81,23 @@ https://material.io/guidelines/style/color.html#color-color-palette */
     min-height: 150px;
     font-weight: 600;
     color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
 }
+
+.col:nth-of-type(3){
+    order: 6;
+}
+
 
 /* TODO: set the background color of every-other <div class="col"> element 
 to #E65100 so that we can see where the column begin/end */
+.col:nth-of-type(odd){
+    background-color: #E65100;
+}
+
+
 
