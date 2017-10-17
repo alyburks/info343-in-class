@@ -9,7 +9,7 @@ Create a variable for the string: `I like JavaScript more than I like to party.`
 Using the variable, [_only_](https://www.w3schools.com/jsref/jsref_slice_string.asp) print to the console the words `I like to party.`
 <br/><br/>
 
-Next, create a variable for the string: `I love Washington State Unviersity`. 
+Next, create a variable for the string: `I love Washington State University`. 
 
 Whoops. Looks like we made a huge mistake. [Replace](https://www.w3schools.com/jsref/jsref_replace.asp) the words `Washington State University` with `The University of Washington`. Then, print your new sentence to the console.
 <br/><br/>
