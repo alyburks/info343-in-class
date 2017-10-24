@@ -19,31 +19,38 @@ and keep the content horizontally-centered with 1rem of padding on left/right */
 .container {
     max-inline-size: 1140px;
     margin: 0 auto;
-    padding: o 1rem; /*ask what rem means*/
+    padding: 0 1rem; /*ask what rem means*/
     
 }
+
 
 /* TODO: set background image of the <header> to `header.jpg` in the `img` directory,
 and set text color to white, and ensure the height is at least 200px */
 header {
-    background-image: url(../img/header.jpg);
-    background-size: cover;
+    background-color: #034975;
     color: #fff;
-    min-height: 200px
+  
 }
 
 /* TODO: set the font size of the <h1> in the <header> to 5rem
 and the font weight to 200 */
 header h1{
     margin: 0;
-    font-size: 5rem;
+    font-size: 2rem;
     font-weight: 200;
+}
+
+header .page-title {
     flex: 1;
+}
+
+header .lead {
+    display: none;
 }
 
 /* TODO: set the height of the SVG icon to 3rem */
 header svg{
-    height: 3rem;
+    height: 2rem;
     fill: currentColor; /*fill with whatever the color is around it"*/
 }
 
@@ -65,16 +72,6 @@ header .container {
     align-items: center;
 }
 
-/* TODO: make the <div class="col"> elements layout side-by-side instead of stacked */
-.row {
-    display: flex;
-    justify-content: flex-end; /*flex start = left flex end = right*/
-    /*flex-direction: row-reverse;*/
-}
-
-
-
-
 .col {
     background-color: #FF9800; 
     font-size: 2rem;
@@ -88,9 +85,9 @@ header .container {
 
 }
 
-.col:nth-of-type(3){
+/*.col:nth-of-type(3){
     order: 6;
-}
+} switch 6 and 3 */
 
 
 /* TODO: set the background color of every-other <div class="col"> element 
@@ -99,5 +96,89 @@ to #E65100 so that we can see where the column begin/end */
     background-color: #E65100;
 }
 
+nav {
+    background-color: #034975;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    transform: translate(-250px);
+    transition: transform 500ms; 
+}
 
+main, header {
+    transition: transform 500ms;
+}
+
+header button{
+    color: #fff;
+    background-color: transparent;
+    border: none;
+}
+
+.drawer-open nav {
+    transform: translateX(0);
+}
+
+.drawer-open header, .drawer-open main {
+    transform: translateX(250px);
+    filter: opacity(50%);
+}
+
+@media (min-width: 768px){
+    header {
+        background-image: url(../img/header.jpg);
+        background-size: cover;
+        min-height: 200px;
+    }
+
+    header .lead{
+        display: block;
+        font-size: 2rem;
+        display: flex;
+    }
+
+    header h1 {
+        font-size: 5rem;
+    }
+
+    header svg {
+        height: 3rem;
+    } 
+
+    /* TODO: make the <div class="col"> elements layout side-by-side instead of stacked */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .col {
+        flex: 50%;
+    }
+
+
+}
+
+@media (min-width: 992px) {
+    /* on screens 992px and wider... */
+    .col {
+        /* reset flex-basis to automatic sizing based on content*/
+        flex-basis: 33%;
+
+    }
+
+    .testimonial {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media(min-width: 1200px) {
+    /* reset flex-basis to get a 4x1 layout */
+    .col {
+      flex: 1;
+    }
+}
 

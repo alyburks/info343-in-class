@@ -15,9 +15,25 @@
 
 </head>
 <body>
+    <nav>
+        <h2>Drawer</h2>
+
+    </nav>
+
     <header>
         <div class="container">
-            <h1>Flexbox Demo</h1>
+            <div>
+                <button>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                </button>
+            </div>
+            <div class="page-title"> <!-- ask ?--> 
+                <h1>Flexbox Demo</h1>
+                <p class="lead">Multi-column layout</p>
+            </div>
             <div>
                 <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">
                     <!-- information SVG icon from material icons (https://material.io/icons/) -->
@@ -40,5 +56,10 @@
             <div class="col">6</div>
         </div>
     </main>
+    <script>
+        document.querySelector("header button").addEventListener("click",function(){
+            document.body.classList.toggle("drawer-open");
+        })
+    </script>
 </body>
 </html>

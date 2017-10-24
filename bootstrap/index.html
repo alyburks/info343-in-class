@@ -7,63 +7,107 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bootstrap Demo</title>
 
-    <!-- TODO: add link to Bootstrap's stylesheet -->
+    <!-- integirty is a digtal signature; it wont download things if they dont match;good secuirty measure -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:400,600" rel="stylesheet">
 
-    <!-- link to our own stylesheet -->
+    <!-- link to our own stylesheet; order matters; if you want to override bootstrap it has to be below -->
     <link rel="stylesheet" href="css/index.css">
 
     <!-- our page icon -->
     <link rel="icon" href="img/page-icon.png">
+
+
 </head>
 
 <body>
-    <!-- TODO: add Bootstrap style classes to these elements to style them -->
-    <header>
-        <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>   <!-- TODO: add Bootstrap style classes to these elements to style them -->
+    <header class = "jumbotron jumbotron-fluid bg-success text-white"> <!-- this is the style class jumbtron, sucess makes it the success color, changes text color -->
+        <div class= "container-fluid"> <!-- conatiner fluid allows it to grow, container will make it so it does grow but stays in the same place-->
             <div>
                 <div>
                     <h1>Bootstrap Demo</h1>
-                    <p class="lead d-none d-md-block">Building on the shoulders of giants</p>
+                    <p class="lead d-none d-md-block"> <!--When it gets to a medium size the button will not display !important will override anything-->
+                        Building on the 
+                        shoulders of giants</p>
                 </div>
                 <div>
-                    <a href="https://getbootstrap.com/" target="_blank">
+                    <a class="btn btn-primary" 
+                     href="https://getbootstrap.com/" 
+                    target="_blank">
                         Get Started
-                    </a>
+                    </a> <!-- button class -->
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <div>
-            <div>
-                <div>
+        <div class="container-fluid"> <!-- makes sure everything lines up with the header also-->
+
+            <div class="alert alert-danger"> Danger! something wen t horribly wrong. Zombies Appraoching!</div>
+
+            <div class="card">
+                <img src="http://lorempixel.com/300/150/abstract/1" alt="placeholder image">
+                <div class="card-body">
+                    <h1>test</h1>
+                    <p>this is a big test tho</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4 col-xl"> <!-- it will go into a column when the screen is large -->
                     <h2>Column 1</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae adipisci dolore ad praesentium libero nesciunt ea facilis minus fuga.</p>
                 </div>
-                <div>
+                <div class="col-md-6 col-lg-4 col-xl"> <!-- the number after has to be a unit of 12, i want each column to consume 6 or the 12 columns -->
                     <h2>Column 2</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque culpa et inventore ab modi iure!</p>
                 </div>
-                <div>
+                <div class="col-md-6 col-lg-4 col-xl">
                     <h2>Column 3</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad laborum veniam aperiam eligendi voluptatibus distinctio veritatis repudiandae mollitia.</p>
                 </div>
-                <div>
+                <div class="col-md-6 col-lg-4 col-xl">
                     <h2>Column 4</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptatum iste aliquid.</p>
                 </div>
-                <div>
+                <div class="col-md-6 col-lg-4 col-xl">
                     <h2>Column 5</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, optio! Similique dignissimos ducimus fuga molestiae?</p>
                 </div>
-                <div>
+                <div class="col-md-6 col-lg-4 col-xl">
                     <h2>Column 6</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae molestias illo expedita veritatis consectetur eveniet sequi commodi cupiditate perspiciatis iste.</p>
                 </div>
             </div>
         </div>
     </main>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 
 </html>
